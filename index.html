@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Ridhima 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="falling-container" aria-hidden="true"></div>
+
+  <main class="app">
+
+    <section class="card active" id="welcome">
+      <div class="badge">A little surprise for you ✨</div>
+
+      <div class="big-heart">💗</div>
+
+      <h1>Hey, Ridhima<br>
+        <span>[Malkinn Jii]</span> 🌸
+      </h1>
+
+      <p class="subtitle">
+        I made a tiny corner of the internet just for you.
+      </p>
+
+      <p>Thoda cute, thoda funny, aur thoda dil se. Ready?</p>
+
+      <button onclick="nextSection('welcome', 'message')">
+        Open your surprise 💌
+      </button>
+    </section>
+
+    <section class="card" id="message">
+      <div class="emoji-line">🌷 ✨ 🦋 ✨ 🌷</div>
+
+      <h2>Ek chhoti si baat...</h2>
+
+      <p>
+        Tumhari smile, tumhari baatein aur tumhara hona —
+        in sab mein kuch toh special hai.
+      </p>
+
+      <p>
+        Isliye socha, normal tareeke se nahi...
+        thoda filmy tareeke se poochha jaye. 😌💗
+      </p>
+
+      <button onclick="nextSection('message', 'fun')">
+        Aage dekho 😳
+      </button>
+    </section>
+
+    <section class="card" id="fun">
+      <div class="big-heart">🫶</div>
+
+      <h2>Ek important question!</h2>
+
+      <p>
+        Promise, zyada difficult nahi hai.
+        Bas dil se answer dena. 🌸
+      </p>
+
+      <div class="question-box">
+        <h3>Kya main tumhe thoda sa special lagta hoon? 🙈</h3>
+
+        <button onclick="submitAnswer(
+          'special',
+          'Kya main tumhe thoda sa special lagta hoon?',
+          'Haan 💗',
+          'proposal'
+        )">
+          Haan 💗
+        </button>
+
+        <button class="secondary" onclick="submitAnswer(
+          'special',
+          'Kya main tumhe thoda sa special lagta hoon?',
+          'Thoda sa 😌',
+          'proposal'
+        )">
+          Thoda sa 😌
+        </button>
+
+        <button class="text-button" onclick="submitAnswer(
+          'special',
+          'Kya main tumhe thoda sa special lagta hoon?',
+          'Sochna padega 🤭',
+          'proposal'
+        )">
+          Sochna padega 🤭
+        </button>
+      </div>
+    </section>
+
+    <section class="card" id="proposal">
+      <div class="big-heart">💍</div>
+
+      <h2>Ridhima [Malkinn Jii]...</h2>
+
+      <p>
+        Main tumhe pasand karta hoon, aur tumhare saath
+        aur beautiful memories banana chahta hoon.
+      </p>
+
+      <h3>Will you give us a chance? 💗</h3>
+
+      <p class="consent-note">
+        Tumhara answer Meet ke private response dashboard par save hoga.
+      </p>
+
+      <button onclick="submitAnswer(
+        'proposal',
+        'Will you give us a chance?',
+        'Yes 💖',
+        'final'
+      )">
+        Yes 💖
+      </button>
+
+      <button class="secondary" onclick="submitAnswer(
+        'proposal',
+        'Will you give us a chance?',
+        'I need time 🌷',
+        'time'
+      )">
+        I need time 🌷
+      </button>
+
+      <button class="text-button" onclick="submitAnswer(
+        'proposal',
+        'Will you give us a chance?',
+        'No, but thank you 🤍',
+        'respect'
+      )">
+        No, but thank you 🤍
+      </button>
+    </section>
+
+    <section class="card" id="time">
+      <div class="big-heart">🌷</div>
+
+      <h2>Take your time</h2>
+
+      <p>
+        Koi jaldi nahi hai. Tumhara comfort aur tumhari choice
+        sabse important hai.
+      </p>
+
+      <button onclick="submitAnswer(
+        'followup',
+        'Additional response',
+        'I need time',
+        'end'
+      )">
+        Thank you 💗
+      </button>
+    </section>
+
+    <section class="card" id="respect">
+      <div class="big-heart">🤍</div>
+
+      <h2>Thank you for being honest</h2>
+
+      <p>
+        Tumhara answer respect ke saath accept hai.
+        I hope tum hamesha khush raho. 🌸
+      </p>
+
+      <button onclick="nextSection('respect', 'end')">
+        Finish ✨
+      </button>
+    </section>
+
+    <section class="card" id="final">
+      <div class="big-heart">🥹💗</div>
+
+      <h2>You made my day!</h2>
+
+      <p>
+        Thank you for giving this little surprise a chance.
+        Here's to more smiles and beautiful moments. 🌷
+      </p>
+
+      <button onclick="nextSection('final', 'end')">
+        One last thing 💌
+      </button>
+    </section>
+
+    <section class="card" id="end">
+      <div class="big-heart">🌸</div>
+
+      <h2>That's all for now</h2>
+
+      <p>Made with a little courage and a lot of care. 💗</p>
+
+      <p class="small-note">
+        You can close this page whenever you want.
+      </p>
+
+      <p id="save-status" class="save-status" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

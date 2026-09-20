@@ -1,0 +1,35 @@
+FIRESTORE SECURITY RULES
+
+IMPORTANT:
+The website allows a visitor to CREATE a response without logging in.
+Only your Firebase-authenticated account should be allowed to READ responses.
+
+Paste these rules into Firebase Console > Firestore Database > Rules.
+
+Replace rangarimeet4@gmail.com with the exact email address of your Firebase dashboard account.
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /responses/{responseId} {
+      allow create: if
+        request.resource.data.keys().hasOnly([
+          'questionId', 'question', 'answer', 'createdAt', 'source'
+        ]) &&
+        request.resource.data.questionId is string &&
+        request.resource.data.question is string &&
+        request.resource.data.answer is string &&
+        request.resource.data.source == 'Ridhima Proposal Website';
+
+      allow read: if request.auth != null
+                  && request.auth.token.email == 'rangarimeet4@gmail.com';
+
+      allow update, delete: if false;
+    }
+  }
+}
+
+NOTE:
+Public create access can still be abused by someone sending fake submissions.
+For a stronger anti-spam system, Firebase App Check or a server-side Cloud Function can be added later.
